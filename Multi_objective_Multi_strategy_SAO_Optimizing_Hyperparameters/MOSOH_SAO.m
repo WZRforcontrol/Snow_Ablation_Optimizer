@@ -21,11 +21,11 @@
 % If all the variables have equal lower bound you can just
 % define lb and ub as two single numbers
 
-% To run DP-SAO: [Best_pos,Best_score,Convergence_curve]=DP_SAO(SearchAgents_no,Max_iteration,lb,ub,dim,fobj)
+% To run DP-SAO: [Best_pos,Best_score,Convergence_curve]=MOSOH_SAO(SearchAgents_no,Max_iteration,lb,ub,dim,fobj)
 %______________________________________________________________________________________________
 
 
-function [Best_pos,Best_score,Convergence_curve]=DP_SAO(N,Max_iter,lb,ub,dim,fobj)
+function [Best_pos,Best_score,Convergence_curve]=MOSOH_SAO(N,Max_iter,lb,ub,dim,fobj)
 %% 上下界避免错误
 if(max(size(ub)) == 1)
     ub = ub.*ones(1,dim);
