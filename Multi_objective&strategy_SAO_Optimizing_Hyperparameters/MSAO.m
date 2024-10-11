@@ -1,30 +1,27 @@
-%  MSAO: A multi-strategy boosted snow ablation optimizer for global optimization and real-world engineering applications
+%  MSAO: 多策略增强雪消融优化器
 %
 %  Developed in MATLAB R2022a
 %
 %  Author : Z.R.Wang
 %
 %  e-Mail: Email: wangzhanran@stumail.ysu.edu.cn
-
-%  Main paper:
-%  {MSAO}: A multi-strategy boosted snow ablation optimizer for global optimization
-% and real-world engineering applications, DOI: 10.1016/j.aei.2024.102464
+%
+%  reference:
+%  MSAO: A multi-strategy boosted snow ablation optimizer for global optimization and real-world engineering applications
 %_______________________________________________________________________________________________
-% You can simply define your cost function in a seperate file and load its handle to fobj
-% The initial parameters that you need are:
+% 您可以简单地在一个单独的文件中定义您的成本函数，并将其句柄加载到fobj
+% 您需要的初始参数如下:
 %__________________________________________
-% fobj = @YourCostFunction
-% dim = number of your variables
-% Max_iteration = maximum number of iterations
-% SearchAgents_no = number of search agents
-% lb=[lb1,lb2,...,lbn] where lbn is the lower bound of variable n
-% ub=[ub1,ub2,...,ubn] where ubn is the upper bound of variable n
-% If all the variables have equal lower bound you can just
-% define lb and ub as two single numbers
-
+% fobj = @YourCostFunction 单目标
+% dim 变量个数
+% Max_iteration 最大迭代次数
+% SearchAgents_no 搜索代理的数目
+% lb=[lb1,lb2,...,lbn] 下界
+% ub=[ub1,ub2,...,ubn] 上界
+% 如果所有变量的下界都相等，你可以将lb和ub定义为两个数字
+%
 % To run MSAO:
 %______________________________________________________________________________________________
-
 
 function [Best_pos,Best_score,Convergence_curve]=MSAO(N,Max_iter,lb,ub,dim,fobj)
 %% hyperparameters

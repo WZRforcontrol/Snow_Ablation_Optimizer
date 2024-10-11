@@ -8,7 +8,7 @@ Function_name=8;
 dim=10; %Dimension,[2,10,30,50,100]
 lb=-100;%lower boound
 ub=100;%upper bound
-fobj = @(x) cec19_func(x',Function_name);
+fobj = @(x) cec17_func(x',Function_name);
 
 Max_test=10;
 for i=1:Max_test
